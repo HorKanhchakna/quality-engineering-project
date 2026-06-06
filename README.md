@@ -46,3 +46,12 @@ docker-compose down -v && docker-compose up -d
 Database `my_new_db` is automatically created with:
 - Root password: `secret123`
 - No manual setup required
+
+## Test Users
+
+Users are created with password `password`:
+- alex@demo.com
+- jamie@demo.com
+- taylor@demo.com
+- morgan@demo.com
+- (and 16 more)

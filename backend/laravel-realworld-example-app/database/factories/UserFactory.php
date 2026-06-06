@@ -2,22 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
 class UserFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $locale = 'en_US';
+
     public function definition()
     {
         return [
-            'username' => $this->faker->unique()->userName(),
+            'username' => $this->faker->unique()->randomElement(['alex', 'jamie', 'taylor', 'morgan', 'casey', 'riley', 'jordan', 'quinn', 'skyler', 'drew', 'avery', 'charlie', 'pat', 'frances', 'jules', 'dana', 'rey', 'robin', 'emery', 'lane']),
             'email' => $this->faker->unique()->safeEmail(),
             'bio' => $this->faker->optional()->paragraph(),
             'image' => $this->faker->optional()->imageUrl(),

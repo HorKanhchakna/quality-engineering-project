@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CommentFactory extends Factory
 {
+    protected $locale = 'en_US';
+
     /**
      * Define the model's default state.
      *

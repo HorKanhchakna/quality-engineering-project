@@ -11,6 +11,8 @@ use Illuminate\Support\Str;
  */
 class ArticleFactory extends Factory
 {
+    protected $locale = 'en_US';
+
     /**
      * Define the model's default state.
      *
@@ -23,7 +25,7 @@ class ArticleFactory extends Factory
             'slug' => fn (array $attrs) => Str::slug($attrs['title']),
             'title' => $this->faker->unique()->sentence(4),
             'description' => $this->faker->paragraph(),
-            'body' => $this->faker->text(),
+            'body' => $this->faker->paragraphs(3, true),
             'created_at' => function (array $attributes) {
                 $user = User::find($attributes['author_id']);
 
