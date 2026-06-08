@@ -33,5 +33,15 @@ services:
     depends_on:
       - backend
 
+  k6:
+    image: grafana/k6
+    command: run /scripts/load-test.js
+    volumes:
+      - ./performance:/scripts
+    environment:
+      - API_BASE=http://backend:8000/api
+    depends_on:
+      - backend
+
 volumes:
   mysql-data:
